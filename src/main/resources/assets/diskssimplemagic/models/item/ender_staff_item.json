@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "diskssimplemagic:items/ender_staff_item"
+    }
+}

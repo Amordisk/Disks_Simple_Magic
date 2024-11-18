@@ -13,17 +13,17 @@ public class ItemInit {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, DisksSimpleMagic.MODID);
 
-    public static final RegistryObject<Item> TEST = ITEMS.register("test", () -> new Item(new Item.Properties().tab(ModCreativeTab.instance)));
+    public static final RegistryObject<Item> ENDERSTAFFITEM = ITEMS.register("ender_staff_item", () -> new Item(new Item.Properties().tab(ModCreativeTab.instance)));
 
 
     public static class ModCreativeTab extends CreativeModeTab {
-        public static final ModCreativeTab instance = new ModCreativeTab(CreativeModeTab.TABS.length, "firstmod");
+        public static final ModCreativeTab instance = new ModCreativeTab(CreativeModeTab.TABS.length, "diskssimplemagic");
         private ModCreativeTab(int index, String label) {
             super(index, label);
         }
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(TEST.get());
+            return new ItemStack(ENDERSTAFFITEM.get());
         }
     }
 }
