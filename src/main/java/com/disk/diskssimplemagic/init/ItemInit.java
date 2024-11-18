@@ -1,6 +1,7 @@
 package com.disk.diskssimplemagic.init;
 
 import com.disk.diskssimplemagic.DisksSimpleMagic;
+import com.disk.diskssimplemagic.items.EnderStaff;
 
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -13,7 +14,7 @@ public class ItemInit {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, DisksSimpleMagic.MODID);
 
-    public static final RegistryObject<Item> ENDERSTAFFITEM = ITEMS.register("ender_staff_item", () -> new Item(new Item.Properties().tab(ModCreativeTab.instance)));
+    public static final RegistryObject<Item> ENDER_STAFF_ITEM = ITEMS.register("ender_staff_item", () -> new EnderStaff(new Item.Properties().tab(ModCreativeTab.instance)));
 
 
     public static class ModCreativeTab extends CreativeModeTab {
@@ -23,7 +24,7 @@ public class ItemInit {
         }
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ENDERSTAFFITEM.get());
+            return new ItemStack(ENDER_STAFF_ITEM.get());
         }
     }
 }
