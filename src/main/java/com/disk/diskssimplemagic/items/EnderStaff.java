@@ -1,7 +1,5 @@
 package com.disk.diskssimplemagic.items;
 
-import com.mojang.math.Vector3d;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -20,6 +18,7 @@ public class EnderStaff extends Item {
     public EnderStaff(Properties properties) {
         super(properties);
     }
+    
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
         BlockHitResult ray = rayTrace(world, player, ClipContext.Fluid.NONE);
