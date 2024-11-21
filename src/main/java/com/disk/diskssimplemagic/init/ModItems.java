@@ -12,10 +12,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModItems {
-    
+
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, DisksSimpleMagic.MODID);
 
-    public static final RegistryObject<Item> ENDER_STAFF_ITEM = ITEMS.register("ender_staff_item", () -> new EnderStaff(new Item.Properties().tab(ModCreativeTab.instance)));
+    public static final RegistryObject<Item> ENDER_STAFF_ITEM = ITEMS.register("ender_staff_item", () -> new EnderStaff(new Item.Properties().tab(ModCreativeTab.instance).stacksTo( 1)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
