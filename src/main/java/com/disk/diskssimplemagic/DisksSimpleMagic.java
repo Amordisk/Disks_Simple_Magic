@@ -1,11 +1,9 @@
 package com.disk.diskssimplemagic;
 
-import com.disk.diskssimplemagic.init.ModItems;
+import com.disk.diskssimplemagic.blocks.ModBlocks;
+import com.disk.diskssimplemagic.items.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -17,9 +15,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 
@@ -28,10 +23,6 @@ public class DisksSimpleMagic
 {
     public static final String MODID = "diskssimplemagic";
     public static final Logger LOGGER = LogUtils.getLogger();
-    
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-
-    public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
 
     public DisksSimpleMagic()
     {
@@ -39,7 +30,7 @@ public class DisksSimpleMagic
 
         modEventBus.addListener(this::commonSetup);
 
-        BLOCKS.register(modEventBus);
+        ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);

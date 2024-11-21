@@ -1,7 +1,7 @@
 package com.disk.diskssimplemagic.datageneration;
 
 import com.disk.diskssimplemagic.DisksSimpleMagic;
-import com.disk.diskssimplemagic.init.ModItems;
+import com.disk.diskssimplemagic.items.ModItems;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;

@@ -1,7 +1,6 @@
-package com.disk.diskssimplemagic.init;
+package com.disk.diskssimplemagic.items;
 
 import com.disk.diskssimplemagic.DisksSimpleMagic;
-import com.disk.diskssimplemagic.items.EnderStaff;
 
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
