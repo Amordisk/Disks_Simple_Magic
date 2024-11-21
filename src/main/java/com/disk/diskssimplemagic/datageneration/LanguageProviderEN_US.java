@@ -13,5 +13,6 @@ public class LanguageProviderEN_US extends LanguageProvider {
     @Override
     protected void addTranslations() {
         this.addItem(ModItems.ENDER_STAFF_ITEM, "Ender Staff");
+        this.add("itemGroup.diskssimplemagic", "Disks Simple Magic");
     }
 }

@@ -1,5 +1,4 @@
 {
-    "itemGroup.diskssimplemagic": "Disks Simple Magic",
-
-    "item.diskssimplemagic.ender_staff_item": "Ender Staff"
+  "item.diskssimplemagic.ender_staff_item": "Ender Staff",
+  "itemGroup.diskssimplemagic": "Disks Simple Magic"
 }

@@ -81,14 +81,17 @@ public class DisksSimpleMagic
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }
     }
-
-    @SubscribeEvent
-    public void gatherData(GatherDataEvent event) {
-        event.getGenerator().addProvider(
-            // Tell generator to run only when client assets are generating
-            event.includeClient(),
-            // Localizations for American English
-            new LanguageProviderEN_US(event.getGenerator(), MODID, "en_us")
-        );
+    
+    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class DataGenerators {       
+        @SubscribeEvent
+        public static void configureForgeDatagen(GatherDataEvent event) {
+            event.getGenerator().addProvider(
+                // Tell generator to run only when client assets are generating
+                event.includeClient(),
+                // Localizations for American English
+                new LanguageProviderEN_US(event.getGenerator(), MODID, "en_us")
+            );
+        }
     }
 }
