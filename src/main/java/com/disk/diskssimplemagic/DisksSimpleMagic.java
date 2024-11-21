@@ -1,6 +1,7 @@
 package com.disk.diskssimplemagic;
 
-import com.disk.diskssimplemagic.init.ItemInit;
+import com.disk.diskssimplemagic.datageneration.LanguageProviderEN_US;
+import com.disk.diskssimplemagic.init.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.BlockItem;
@@ -12,6 +13,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -47,7 +49,7 @@ public class DisksSimpleMagic
         modEventBus.addListener(this::commonSetup);
 
         BLOCKS.register(modEventBus);
-        ItemInit.ITEMS.register(modEventBus);
+        ModItems.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -78,5 +80,15 @@ public class DisksSimpleMagic
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }
+    }
+
+    @SubscribeEvent
+    public void gatherData(GatherDataEvent event) {
+        event.getGenerator().addProvider(
+            // Tell generator to run only when client assets are generating
+            event.includeClient(),
+            // Localizations for American English
+            new LanguageProviderEN_US(event.getGenerator(), MODID, "en_us")
+        );
     }
 }
